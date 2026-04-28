@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This repository contains a mobile-first Habit Tracker Progressive Web App built for the Stage 3 technical requirements document. The app uses Next.js App Router, React, TypeScript, Tailwind CSS, `localStorage`, Vitest, React Testing Library, and Playwright.
+This repository contains a mobile-first Habit Tracker Progressive Web App. The app uses Next.js App Router, React, TypeScript, Tailwind CSS, `localStorage`, Vitest, React Testing Library, and Playwright.
 
 Implemented product behavior:
 
