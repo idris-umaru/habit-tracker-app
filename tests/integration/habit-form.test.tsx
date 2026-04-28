@@ -5,12 +5,14 @@ import HabitDashboard from "@/components/dashboard/HabitDashboard";
 import { STORAGE_KEYS } from "@/lib/storage";
 
 const replaceMock = vi.fn();
+const pushMock = vi.fn();
+const routerMock = {
+  replace: replaceMock,
+  push: pushMock,
+};
 
 vi.mock("next/navigation", () => ({
-  useRouter: () => ({
-    replace: replaceMock,
-    push: vi.fn(),
-  }),
+  useRouter: () => routerMock,
 }));
 
 const session = {
@@ -36,6 +38,7 @@ function renderDashboard() {
 describe("habit form", () => {
   beforeEach(() => {
     replaceMock.mockReset();
+    pushMock.mockReset();
     window.localStorage.clear();
   });
 
