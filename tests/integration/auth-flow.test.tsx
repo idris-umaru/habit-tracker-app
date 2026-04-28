@@ -5,17 +5,20 @@ import { AuthScreen } from "@/components/auth/AuthScreen";
 import { STORAGE_KEYS } from "@/lib/storage";
 
 const replaceMock = vi.fn();
+const pushMock = vi.fn();
+const routerMock = {
+  replace: replaceMock,
+  push: pushMock,
+};
 
 vi.mock("next/navigation", () => ({
-  useRouter: () => ({
-    replace: replaceMock,
-    push: vi.fn(),
-  }),
+  useRouter: () => routerMock,
 }));
 
 describe("auth flow", () => {
   beforeEach(() => {
     replaceMock.mockReset();
+    pushMock.mockReset();
     window.localStorage.clear();
   });
 
